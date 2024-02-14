@@ -3,14 +3,14 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class RecursiveMazeSolver {
+
+    private static char[][] maze;
+    private static int startX, startY, endX, endY;
+    private static int row, column;
 	
-	private static char[][] maze;
-	private static int startX, startY, endX, endY;
-	private static int row, column;
-	
-	public static void mazeMaker() {
+    public static void mazeMaker() {
 		
-	Scanner fileInput = new Scanner(System.in);
+        Scanner fileInput = new Scanner(System.in);
     	System.out.println("Please enter the path for your maze:");
     	File fileName = new File(fileInput.nextLine());
     	fileInput.close();
