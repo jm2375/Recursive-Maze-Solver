@@ -1,1 +1,1 @@
-# RecursiveMazeSolver
+# Recursive Maze Solver
