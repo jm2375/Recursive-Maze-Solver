@@ -18,45 +18,45 @@ public class RecursiveMazeSolver {
     	mazeMatrix(fileName);
     }
 	
-	public static void mazeMatrix(File fileName) {
+    public static void mazeMatrix(File fileName) {
 		
-		 try {
-	            Scanner scanner = new Scanner(fileName);	
-	            row = scanner.nextInt();
-	            column = scanner.nextInt();
+        try {
+            Scanner scanner = new Scanner(fileName);	
+            row = scanner.nextInt();
+            column = scanner.nextInt();
 
-	            scanner.nextLine();
+            scanner.nextLine();
 
-	            maze = new char[row][column];
+            maze = new char[row][column];
 
-	            for (int x = 0; x < row; x++) {
-	                String line = scanner.nextLine();
-	                for (int y = 0; y < column; y++) {
-	                    maze[x][y] = line.charAt(y);
+            for (int x = 0; x < row; x++) {
+                String line = scanner.nextLine();
+                for (int y = 0; y < column; y++) {
+                    maze[x][y] = line.charAt(y);
 	                    
-	                    if(line.charAt(y) == '+') {
-	                    	startX = x;
-	                    	startY = y;
-	                    }
+                    if(line.charAt(y) == '+') {
+                        startX = x;
+                        startY = y;
+                    }
 	                    
-	                    if(line.charAt(y) == '-') {
-	                    	endX = x;
-	                    	endY = y;
-	                    }
-	                }
-	            }
-	            scanner.close();
-	        }
-	        catch (FileNotFoundException e) {
-	        	System.out.println("File not found.");
-	        }
-	}
+                    if(line.charAt(y) == '-') {
+                        endX = x;
+                        endY = y;
+                    }
+                }
+            }
+            scanner.close();
+        }
+        catch (FileNotFoundException e) {
+            System.out.println("File not found.");
+        }
+    }
 	
-	private static boolean mazeSolver(int a, int b) {
+    private static boolean mazeSolver(int a, int b) {
 		
-		if(a < 0 || b < 0 || a >= row  || b >= column || maze[a][b] == 'X' || maze[a][b] == '@') {
-			return false;
-		}
+        if(a < 0 || b < 0 || a >= row  || b >= column || maze[a][b] == 'X' || maze[a][b] == '@') {
+            return false;
+        }
         if (a == endX && b == endY) {
             return true;
         }
