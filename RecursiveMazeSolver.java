@@ -10,7 +10,7 @@ public class RecursiveMazeSolver {
 	
 	public static void mazeMaker() {
 		
-		Scanner fileInput = new Scanner(System.in);
+	Scanner fileInput = new Scanner(System.in);
     	System.out.println("Please enter the path for your maze:");
     	File fileName = new File(fileInput.nextLine());
     	fileInput.close();
@@ -21,11 +21,10 @@ public class RecursiveMazeSolver {
 	public static void mazeMatrix(File fileName) {
 		
 		 try {
-			 	Scanner scanner = new Scanner(fileName);			 
-			 	
+	            Scanner scanner = new Scanner(fileName);	
 	            row = scanner.nextInt();
 	            column = scanner.nextInt();
-	            
+
 	            scanner.nextLine();
 
 	            maze = new char[row][column];
